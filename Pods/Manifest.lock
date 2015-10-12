@@ -1,0 +1,13 @@
+PODS:
+  - MBProgressHUD (0.9.1)
+  - RDVTabBarController (1.1.9)
+
+DEPENDENCIES:
+  - MBProgressHUD (~> 0.9.1)
+  - RDVTabBarController (~> 1.1.9)
+
+SPEC CHECKSUMS:
+  MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
+  RDVTabBarController: 67794f7a7a37f8e32f046f85ac67d06ab92d624a
+
+COCOAPODS: 0.38.2
