@@ -42,7 +42,7 @@
     UIImage *finishedImage = [UIImage imageNamed:@"tabbar_selected_background"];
     UIImage *unfinishedImage = [UIImage imageNamed:@"tabbar_normal_background"];
     NSArray *tabBarItemImages = @[@"bottom_btn1", @"bottom_btn2", @"bottom_btn3", @"bottom_btn4", @"bottom_btn5"];
-    NSArray *tabBarItemTitles = @[@"首页", @"课表", @"联系人",@"发现",@"我"];
+    NSArray *tabBarItemTitles = @[@"首页", @"课表", @"找老师",@"发现",@"我"];
     
     RDVTabBar *tabBar = [self tabBar];
     

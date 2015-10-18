@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		B7C879CAD7608DBD3621117A /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BC30C242C789267209154FD0 /* libPods.a */; };
+		C709AA551BCD38AC005953F9 /* HSLogon.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C709AA521BCD38AC005953F9 /* HSLogon.storyboard */; };
+		C709AA561BCD38AC005953F9 /* HSLogonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C709AA541BCD38AC005953F9 /* HSLogonViewController.m */; };
+		C709AA5B1BCD38E9005953F9 /* HSWelcomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C709AA591BCD38E9005953F9 /* HSWelcomePageViewController.m */; };
+		C709AA5C1BCD38E9005953F9 /* HSWelcomePage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C709AA5A1BCD38E9005953F9 /* HSWelcomePage.storyboard */; };
+		C709AA5F1BCD3D0B005953F9 /* HSLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C709AA5E1BCD3D0B005953F9 /* HSLoginViewController.m */; };
 		C742ED381BAAE88100719F2A /* HSSignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C742ED371BAAE88100719F2A /* HSSignInViewController.m */; };
 		C742ED3B1BAAF6DF00719F2A /* HSLongInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C742ED3A1BAAF6DF00719F2A /* HSLongInViewController.m */; };
 		C742ED411BAB023000719F2A /* HSUpPhotoAndComentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C742ED401BAB023000719F2A /* HSUpPhotoAndComentViewController.m */; };
@@ -31,6 +36,9 @@
 		C75895EB1BA9994900011E08 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C75895EA1BA9994900011E08 /* CFNetwork.framework */; };
 		C75895ED1BA9995400011E08 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C75895EC1BA9995400011E08 /* UIKit.framework */; };
 		C75895EF1BA9995C00011E08 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C75895EE1BA9995C00011E08 /* Foundation.framework */; };
+		C77D81F11BCE745C00167F02 /* HSResignViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C77D81F01BCE745C00167F02 /* HSResignViewController.m */; };
+		C77D81F51BCE7CC400167F02 /* PooCodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = C77D81F41BCE7CC400167F02 /* PooCodeView.m */; };
+		C77D81FC1BCE8A8700167F02 /* ACSimpleKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = C77D81FB1BCE8A8700167F02 /* ACSimpleKeychain.m */; };
 		C78967B31BB29EC400424651 /* TgHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = C78967B11BB29EC400424651 /* TgHeaderView.m */; };
 		C78967B41BB29EC400424651 /* TgHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C78967B21BB29EC400424651 /* TgHeaderView.xib */; };
 		C78C6A4F1BCBB998004CDBD9 /* NSString+MoreExtentions.m in Sources */ = {isa = PBXBuildFile; fileRef = C78C6A4C1BCBB997004CDBD9 /* NSString+MoreExtentions.m */; };
@@ -82,6 +90,14 @@
 /* Begin PBXFileReference section */
 		71BF112D7C15DAABE59D3D0D /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		BC30C242C789267209154FD0 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C709AA521BCD38AC005953F9 /* HSLogon.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HSLogon.storyboard; sourceTree = "<group>"; };
+		C709AA531BCD38AC005953F9 /* HSLogonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSLogonViewController.h; sourceTree = "<group>"; };
+		C709AA541BCD38AC005953F9 /* HSLogonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSLogonViewController.m; sourceTree = "<group>"; };
+		C709AA581BCD38E9005953F9 /* HSWelcomePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSWelcomePageViewController.h; sourceTree = "<group>"; };
+		C709AA591BCD38E9005953F9 /* HSWelcomePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSWelcomePageViewController.m; sourceTree = "<group>"; };
+		C709AA5A1BCD38E9005953F9 /* HSWelcomePage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HSWelcomePage.storyboard; sourceTree = "<group>"; };
+		C709AA5D1BCD3D0B005953F9 /* HSLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSLoginViewController.h; sourceTree = "<group>"; };
+		C709AA5E1BCD3D0B005953F9 /* HSLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSLoginViewController.m; sourceTree = "<group>"; };
 		C742ED361BAAE88100719F2A /* HSSignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSSignInViewController.h; sourceTree = "<group>"; };
 		C742ED371BAAE88100719F2A /* HSSignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSSignInViewController.m; sourceTree = "<group>"; };
 		C742ED391BAAF6DF00719F2A /* HSLongInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSLongInViewController.h; sourceTree = "<group>"; };
@@ -112,6 +128,12 @@
 		C75895EA1BA9994900011E08 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		C75895EC1BA9995400011E08 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C75895EE1BA9995C00011E08 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		C77D81EF1BCE745C00167F02 /* HSResignViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSResignViewController.h; sourceTree = "<group>"; };
+		C77D81F01BCE745C00167F02 /* HSResignViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSResignViewController.m; sourceTree = "<group>"; };
+		C77D81F31BCE7CC400167F02 /* PooCodeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PooCodeView.h; sourceTree = "<group>"; };
+		C77D81F41BCE7CC400167F02 /* PooCodeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PooCodeView.m; sourceTree = "<group>"; };
+		C77D81FA1BCE8A8700167F02 /* ACSimpleKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACSimpleKeychain.h; sourceTree = "<group>"; };
+		C77D81FB1BCE8A8700167F02 /* ACSimpleKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACSimpleKeychain.m; sourceTree = "<group>"; };
 		C78967B01BB29EC400424651 /* TgHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TgHeaderView.h; sourceTree = "<group>"; };
 		C78967B11BB29EC400424651 /* TgHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TgHeaderView.m; sourceTree = "<group>"; };
 		C78967B21BB29EC400424651 /* TgHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TgHeaderView.xib; sourceTree = "<group>"; };
@@ -233,6 +255,30 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C709AA511BCD3887005953F9 /* 登录注册 */ = {
+			isa = PBXGroup;
+			children = (
+				C709AA521BCD38AC005953F9 /* HSLogon.storyboard */,
+				C709AA531BCD38AC005953F9 /* HSLogonViewController.h */,
+				C709AA541BCD38AC005953F9 /* HSLogonViewController.m */,
+				C709AA5D1BCD3D0B005953F9 /* HSLoginViewController.h */,
+				C709AA5E1BCD3D0B005953F9 /* HSLoginViewController.m */,
+				C77D81EF1BCE745C00167F02 /* HSResignViewController.h */,
+				C77D81F01BCE745C00167F02 /* HSResignViewController.m */,
+			);
+			name = "登录注册";
+			sourceTree = "<group>";
+		};
+		C709AA571BCD38D1005953F9 /* 欢迎页 */ = {
+			isa = PBXGroup;
+			children = (
+				C709AA581BCD38E9005953F9 /* HSWelcomePageViewController.h */,
+				C709AA591BCD38E9005953F9 /* HSWelcomePageViewController.m */,
+				C709AA5A1BCD38E9005953F9 /* HSWelcomePage.storyboard */,
+			);
+			name = "欢迎页";
+			sourceTree = "<group>";
+		};
 		C73BF1E11BC90F1B00CFA4F6 /* Find */ = {
 			isa = PBXGroup;
 			children = (
@@ -289,12 +335,30 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
+		C77D81F21BCE7CAC00167F02 /* 验证码 */ = {
+			isa = PBXGroup;
+			children = (
+				C77D81F31BCE7CC400167F02 /* PooCodeView.h */,
+				C77D81F41BCE7CC400167F02 /* PooCodeView.m */,
+			);
+			name = "验证码";
+			sourceTree = "<group>";
+		};
+		C77D81F91BCE8A6E00167F02 /* 保存密码 */ = {
+			isa = PBXGroup;
+			children = (
+				C77D81FA1BCE8A8700167F02 /* ACSimpleKeychain.h */,
+				C77D81FB1BCE8A8700167F02 /* ACSimpleKeychain.m */,
+			);
+			name = "保存密码";
+			sourceTree = "<group>";
+		};
 		C78967AF1BB29EB500424651 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
-				C78967B01BB29EC400424651 /* TgHeaderView.h */,
-				C78967B11BB29EC400424651 /* TgHeaderView.m */,
-				C78967B21BB29EC400424651 /* TgHeaderView.xib */,
+				C77D81F91BCE8A6E00167F02 /* 保存密码 */,
+				C77D81F21BCE7CAC00167F02 /* 验证码 */,
+				C7F7EB121BCF984C00266533 /* 图片轮播器 */,
 			);
 			name = Tool;
 			sourceTree = "<group>";
@@ -422,6 +486,8 @@
 		C7F136DD1BA9166300AC7BD1 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				C709AA571BCD38D1005953F9 /* 欢迎页 */,
+				C709AA511BCD3887005953F9 /* 登录注册 */,
 				C7F136F11BA9216300AC7BD1 /* Frist */,
 				C7F136E51BA916DB00AC7BD1 /* Me */,
 				C7F136E41BA916CF00AC7BD1 /* Schedule */,
@@ -527,6 +593,16 @@
 			name = Frist;
 			sourceTree = "<group>";
 		};
+		C7F7EB121BCF984C00266533 /* 图片轮播器 */ = {
+			isa = PBXGroup;
+			children = (
+				C78967B01BB29EC400424651 /* TgHeaderView.h */,
+				C78967B11BB29EC400424651 /* TgHeaderView.m */,
+				C78967B21BB29EC400424651 /* TgHeaderView.xib */,
+			);
+			name = "图片轮播器";
+			sourceTree = "<group>";
+		};
 		E19871F4D4FE0C62A4B6A86A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -621,12 +697,14 @@
 				C78C6A5E1BCBB9C1004CDBD9 /* WechatFooterView.xib in Resources */,
 				C7BF9EAB1BA95E5100EBACC5 /* 学习头条.png in Resources */,
 				C78C6A611BCBB9C1004CDBD9 /* WechatHeaderView.xib in Resources */,
+				C709AA5C1BCD38E9005953F9 /* HSWelcomePage.storyboard in Resources */,
 				C7BF9EA91BA95CEC00EBACC5 /* 广告.png in Resources */,
 				C7F136F01BA91DEE00AC7BD1 /* HSFind.storyboard in Resources */,
 				C7F136C81BA9165300AC7BD1 /* LaunchScreen.xib in Resources */,
 				C75895A71BA996BB00011E08 /* HSSchedule.storyboard in Resources */,
 				C7BF9EA71BA95B2E00EBACC5 /* pic_fresh_n.png in Resources */,
 				C78967B41BB29EC400424651 /* TgHeaderView.xib in Resources */,
+				C709AA551BCD38AC005953F9 /* HSLogon.storyboard in Resources */,
 				C7F136EE1BA91DE000AC7BD1 /* HSContacts.storyboard in Resources */,
 				C7F136C51BA9165300AC7BD1 /* Images.xcassets in Resources */,
 				C78C6A681BCBBA5D004CDBD9 /* weichat.plist in Resources */,
@@ -683,12 +761,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				C78C6A501BCBB998004CDBD9 /* UIView+Extension.m in Sources */,
+				C709AA561BCD38AC005953F9 /* HSLogonViewController.m in Sources */,
 				C78C6A621BCBB9C1004CDBD9 /* WechatModel.m in Sources */,
 				C78967B31BB29EC400424651 /* TgHeaderView.m in Sources */,
 				C7BA2BE41BC52C17006C03B6 /* HSPersonalInformationTableViewController.m in Sources */,
+				C77D81F11BCE745C00167F02 /* HSResignViewController.m in Sources */,
 				C7F136BA1BA9165300AC7BD1 /* AppDelegate.m in Sources */,
 				C7BA2BD41BC52BE1006C03B6 /* HSMETableViewController.m in Sources */,
 				C78C6A5F1BCBB9C1004CDBD9 /* WechatFrameModel.m in Sources */,
+				C709AA5F1BCD3D0B005953F9 /* HSLoginViewController.m in Sources */,
 				C78C6A5D1BCBB9C1004CDBD9 /* WechatFooterView.m in Sources */,
 				C7BA2BE71BC52C17006C03B6 /* HSUserMessage TableViewController.m in Sources */,
 				C7BA2BE51BC52C17006C03B6 /* HSGeographicalLocationTableViewController.m in Sources */,
@@ -702,12 +783,15 @@
 				C742ED3B1BAAF6DF00719F2A /* HSLongInViewController.m in Sources */,
 				C75895AA1BA996C900011E08 /* HSScheduleTableViewController.m in Sources */,
 				C7BF9EA51BA955CA00EBACC5 /* HSFirstViewController.m in Sources */,
+				C77D81F51BCE7CC400167F02 /* PooCodeView.m in Sources */,
 				C7BA2BEA1BC52C17006C03B6 /* HSUserSettingTableViewController.m in Sources */,
 				C7B4DBE81BB15EA10064BF41 /* HSESViewController.m in Sources */,
 				C7BA2BE61BC52C17006C03B6 /* HSCouponGroupTableViewController.m in Sources */,
+				C77D81FC1BCE8A8700167F02 /* ACSimpleKeychain.m in Sources */,
 				C7F136B71BA9165300AC7BD1 /* main.m in Sources */,
 				C742ED381BAAE88100719F2A /* HSSignInViewController.m in Sources */,
 				C78C6A4F1BCBB998004CDBD9 /* NSString+MoreExtentions.m in Sources */,
+				C709AA5B1BCD38E9005953F9 /* HSWelcomePageViewController.m in Sources */,
 				C78C6A631BCBB9C1004CDBD9 /* WechatViewCell.m in Sources */,
 				C7BA2BE81BC52C17006C03B6 /* HSHelptextTableViewController.m in Sources */,
 				C7BA2BE91BC52C17006C03B6 /* HSFeedbackTableViewController.m in Sources */,

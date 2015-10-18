@@ -11,11 +11,6 @@
 
 int main(int argc, char * argv[]) {
     @autoreleasepool {
-  int res =  UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
-        
-        NSLog(@"end");
-        
-        
-        return res;
+ return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
     }
 }

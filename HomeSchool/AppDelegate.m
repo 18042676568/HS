@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import "HSMainPageViewController.h"
 #import <Parse/Parse.h>
+//#import "HSLogonViewController.h"
+#import "HSWelcomePageViewController.h"
 
 
 @interface AppDelegate ()
@@ -24,97 +26,142 @@
     // Override point for customization after application launch.
     
     
-    [Parse setApplicationId:@"GvvPt9AeT3Dw9tKJ6URnbF3sWp8N05BlYREE9Bu7"clientKey:@"07l7mt0NqkJXFXKy8XXJZb9E7D8Qvqa2nVmKqK06"];
-  
-    
-////    建立用户，异步上传数据
+   [Parse setApplicationId:@"jlaKscSOU7TLkiAChVmIy1e5wMCLDwO52oC15rVU"
+                 clientKey:@"cOmaeoJmm5wtmTJxKj2qJmKYIzYcw0ekrY6jmZlQ"];
+//  
 //    
-    
-    
-    
-    PFObject *anotherPlayer = [PFObject objectWithClassName:@"Player"];
-    [anotherPlayer setObject:@"Jack"forKey:@"Name"];
-    [anotherPlayer setObject:[NSNumber numberWithInt:840] forKey:@"Score"];
-    [anotherPlayer saveInBackgroundWithBlock:^(BOOL succeeded,NSError *error){
-        if(succeeded){
-            NSLog(@"Object Uploaded");
-        } else{
-            
-            NSString *errorString = [[error userInfo]objectForKey:@"error"];
-            
-            NSLog(@"Error:%@",errorString);
-        } }];
-    
-    
-    
-    
-    PFQuery *query = [PFQuery queryWithClassName:@"Player"]; //1
-    [query whereKey:@"Name"equalTo:@"John"]; //2
-    [query whereKey:@"Score"greaterThan:[NSNumber numberWithInt:1000]]; //3
-    [query findObjectsInBackgroundWithBlock:^(NSArray * objects, NSError *error)
-    {
-        //4
-        
-    if(!error){
-        
-        NSLog(@"Successfully retrieved: %@",objects);
-    }else
-    {
-        NSString *errorString = [[error userInfo]objectForKey:@"error"];
-        NSLog(@"Error:%@",errorString);
-    }
-    }];
-    
-    
-    
-    
-    
-//    按照注释编号来依次来解释下
-//    1. 创建了一个查询对象,名字是表的名称。
-//    2. 限定Name的值为John
-//    3. 限制Score的值为大于1000
-//    4. 发送查询,并在block块语句中打印查询结果。
+//////    建立用户，异步上传数据
+////    
 //    
+//    
+//    
+//    PFObject *anotherPlayer = [PFObject objectWithClassName:@"Player"];
+//    [anotherPlayer setObject:@"Jack"forKey:@"Name"];
+//    [anotherPlayer setObject:[NSNumber numberWithInt:840] forKey:@"Score"];
+//    [anotherPlayer saveInBackgroundWithBlock:^(BOOL succeeded,NSError *error){
+//        if(succeeded){
+//            NSLog(@"Object Uploaded");
+//        } else{
+//            
+//            NSString *errorString = [[error userInfo]objectForKey:@"error"];
+//            
+//            NSLog(@"Error:%@",errorString);
+//        } }];
+//    
+//    
+//    
+//    
+//    PFQuery *query = [PFQuery queryWithClassName:@"Player"]; //1
+//    [query whereKey:@"Name"equalTo:@"John"]; //2
+//    [query whereKey:@"Score"greaterThan:[NSNumber numberWithInt:1000]]; //3
+//    [query findObjectsInBackgroundWithBlock:^(NSArray * objects, NSError *error)
+//    {
+//        //4
+//        
+//    if(!error){
+//        
+//        NSLog(@"Successfully retrieved: %@",objects);
+//    }else
+//    {
+//        NSString *errorString = [[error userInfo]objectForKey:@"error"];
+//        NSLog(@"Error:%@",errorString);
+//    }
+//    }];
+//    
+//    
+//    
+//    
+//    
+////    按照注释编号来依次来解释下
+////    1. 创建了一个查询对象,名字是表的名称。
+////    2. 限定Name的值为John
+////    3. 限制Score的值为大于1000
+////    4. 发送查询,并在block块语句中打印查询结果。
+////    
+////
+//    
+//    
+//    
+//    
+////    登陆，判断！！@@@
+//    
+//    
+//    [PFUser logInWithUsernameInBackground:@"123" password:@"123456"
+//                                    block:^(PFUser *user, NSError *error) {
+//                                        if (user) {
+//                                            // Do stuff after successful login.
+//                                            
+//                                            NSLog(@"sucessful");
+//                                            
+//                                            
+//                                            
+//                                            
+//                                        } else {
+//                                            // The login failed. Check error to see why.
+//                                            
+//                                            NSLog(@"failed");
 //
-    
-    
-    
-    
-//    登陆，判断！！@@@
-    
-    
-    [PFUser logInWithUsernameInBackground:@"123" password:@"123456"
-                                    block:^(PFUser *user, NSError *error) {
-                                        if (user) {
-                                            // Do stuff after successful login.
-                                            
-                                            NSLog(@"sucessful");
-                                            
-                                            
-                                            
-                                            
-                                        } else {
-                                            // The login failed. Check error to see why.
-                                            
-                                            NSLog(@"failed");
-
-                                            
-                                            
-                                            
-                                        }
-                                    }];
-    
+//                                            
+//                                            
+//                                            
+//                                        }
+//                                    }];
+//    
     
 //    重置密码
     
 //    [PFUser requestPasswordResetForEmailInBackground:@"email@example.com"];
     
     
-    UIWindow *window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
-    self.window = window;
-    HSMainPageViewController *mainPage = [[HSMainPageViewController alloc]init];
-    window.rootViewController = mainPage;
-    [window makeKeyAndVisible];
+    //1.取得本app的版本号
+    NSDictionary* infoDict = [NSBundle mainBundle].infoDictionary;
+    NSString* newVersion = infoDict[@"CFBundleVersion"];
+    NSLog(@"newVersion %@", newVersion);
+    
+    //2.和之前保存的app版本号 对比 如果相同，则从主页启动，如果不同从欢迎页
+    NSString* oldVersion = [[NSUserDefaults standardUserDefaults] objectForKey:@"CFBundleVersion"];
+    if (oldVersion == nil) {
+        //从欢迎页启动
+        UIStoryboard* storyBoard = [UIStoryboard storyboardWithName:@"HSWelcomePage" bundle:nil];
+        HSWelcomePageViewController* welVC = [storyBoard instantiateViewControllerWithIdentifier:@"welPage"];
+        UIWindow *window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+        self.window = window;
+        window.rootViewController = welVC;
+        [window makeKeyAndVisible];
+    }else{
+        if ([oldVersion isEqualToString:newVersion]) {
+            //从主页启动
+            UIWindow *window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+            self.window = window;
+            //                HSMainPageViewController *mainPage = [[HSMainPageViewController alloc]init];
+            //            window.rootViewController = mainPage;
+            //HSLogonViewController *logon = [[HSLogonViewController alloc]init];
+            UIStoryboard* storyboard0 = [UIStoryboard storyboardWithName:@"HSLogon" bundle:nil];
+            UINavigationController *logon = [storyboard0 instantiateViewControllerWithIdentifier:@"logon"];
+            window.rootViewController = logon;
+            [window makeKeyAndVisible];
+            
+        }else{
+            //从欢迎页启动
+            UIStoryboard* storyBoard = [UIStoryboard storyboardWithName:@"HSWelcomePage" bundle:nil];
+            HSWelcomePageViewController* welVC = [storyBoard instantiateViewControllerWithIdentifier:@"welPage"];
+            UIWindow *window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+            self.window = window;
+            window.rootViewController = welVC;
+            [window makeKeyAndVisible];
+        }
+    }
+    
+    //3.如果不同 把新的app版本号 保存起来
+    [[NSUserDefaults standardUserDefaults] setObject:newVersion forKey:@"CFBundleVersion"];
+    //NSLog(@"doc Path%@", [self applicationDocumentsDirectory]);
+    
+    //    UIWindow *window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    //    self.window = window;
+    //    HSMainPageViewController *mainPage = [[HSMainPageViewController alloc]init];
+    //    window.rootViewController = mainPage;
+    //    [window makeKeyAndVisible];
+
     
     
     
