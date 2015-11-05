@@ -11,6 +11,7 @@
 #import "ACSimpleKeychain.h"
 #import <Parse/Parse.h>
 #import <MBProgressHUD.h>
+#import "MBProgressHUD+MoreExtentions.h"
 
 @interface HSLoginViewController ()
 
@@ -49,49 +50,52 @@
 }
 
 - (IBAction)login:(UIButton *)sender {
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    if(_phone.text.length == 0||_pwd.text.length==0){
-        UIAlertView *errorAlertView = [[UIAlertView alloc] initWithTitle:@"登录失败" message:@"用户名或密码不能为空" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
-        [errorAlertView show];
-
+    
+    if (_phone.text.length == 0) {
+        [MBProgressHUD showTipToWindow:@"手机号不能为空"];
     }
-    [PFUser logInWithUsernameInBackground:_phone.text password:_pwd.text
-    block:^(PFUser *user, NSError *error) {
-        if (user) {
-            
-            PFUser* curUser = [PFUser currentUser];
-            [curUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-                if (succeeded) {
-                    if(_storepwd.selected == YES){
-                        [[ACSimpleKeychain defaultKeychain] storeUsername:_phone.text password:_pwd.text identifier:@"user1" forService:@"userpassword"];
-                    }
-                    else
-                    {
-                        [[ACSimpleKeychain defaultKeychain] deleteAllCredentialsForService:@"userpassword"];
-                    }
-                    
-                    [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-
-                    HSMainPageViewController *mainPage = [[HSMainPageViewController alloc]init];
-                    [UIApplication sharedApplication].keyWindow.rootViewController = mainPage;
-
-                } else {
-                    //Something bad has occurred
-                    NSString *errorString = [[error userInfo] objectForKey:@"error"];
-                    UIAlertView *errorAlertView = [[UIAlertView alloc] initWithTitle:@"登录失败" message:errorString delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
-                    [errorAlertView show];
-                    [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-                }
-            }];
-            
-        } else {
-            //Something bad has occurred
-            NSString *errorString = [[error userInfo] objectForKey:@"error"];
-            UIAlertView *errorAlertView = [[UIAlertView alloc] initWithTitle:@"登录失败" message:errorString delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
-            [errorAlertView show];
-            [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+    else
+    {
+        if (_pwd.text.length == 0) {
+            [MBProgressHUD showTipToWindow:@"密码不能为空"];
         }
-    }];
+        else{
+            [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+            
+            [PFUser logInWithUsernameInBackground:_phone.text password:_pwd.text
+                                            block:^(PFUser *user, NSError *error) {
+                                                if (user) {
+                                                    PFUser* curUser = [PFUser currentUser];
+                                                    [curUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                                                        if (succeeded) {
+                                                            if(_storepwd.selected == YES){
+                                                                [[ACSimpleKeychain defaultKeychain] storeUsername:_phone.text password:_pwd.text identifier:@"user1" forService:@"userpassword"];
+                                                            }
+                                                            else
+                                                            {
+                                                                [[ACSimpleKeychain defaultKeychain] deleteAllCredentialsForService:@"userpassword"];
+                                                            }
+                                                            
+                                                            [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+                                                            
+                                                            HSMainPageViewController *mainPage = [[HSMainPageViewController alloc]init];
+                                                            [UIApplication sharedApplication].keyWindow.rootViewController = mainPage;
+                                                            
+                                                        } else {
+                                                            //Something bad has occurred
+                                                            NSString *errorString = [[error userInfo] objectForKey:@"error"];
+                                                            [MBProgressHUD showTipToWindow:errorString];                                                          [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+                                                        }
+                                                    }];
+                                                    
+                                                } else {
+                                                    //Something bad has occurred
+                                                    NSString *errorString = [[error userInfo] objectForKey:@"error"];
+                                                    [MBProgressHUD showTipToWindow:errorString];                                                                                                           [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+                                                }
+                                            }];
+        }
+    }
     
 }
 

@@ -9,6 +9,7 @@
 #import "HSMainPageViewController.h"
 #import <RDVTabBarController.h>
 #import <RDVTabBarItem.h>
+#import "HSNewsMenuController.h"
 
 #define kTitleBarColor [UIColor colorWithRed:67.f/255.f green:137.f/255.f blue:160.f/255.f alpha:1.0f]
 @interface HSMainPageViewController ()
@@ -24,8 +25,11 @@
     UIStoryboard* storyboard0 = [UIStoryboard storyboardWithName:@"HSFirst" bundle:nil];
     UINavigationController *zeroViewController = [storyboard0 instantiateViewControllerWithIdentifier:@"firstnv"];
     
-    UIStoryboard* storyboard1 = [UIStoryboard storyboardWithName:@"HSContacts" bundle:nil];
-    UINavigationController *contactView = [storyboard1 instantiateViewControllerWithIdentifier:@"contactsnv"];
+    //HSNewsMenuController *zeroViewController = [[HSNewsMenuController alloc]init];
+    //UINavigationController *zeroViewController = news;
+    
+    UIStoryboard* storyboard1 = [UIStoryboard storyboardWithName:@"HSTeacherinfor" bundle:nil];
+    UINavigationController *contactView = [storyboard1 instantiateViewControllerWithIdentifier:@"teacherinfornv"];
     
     UIStoryboard* storyboard2 = [UIStoryboard storyboardWithName:@"HSSchedule" bundle:nil];
     

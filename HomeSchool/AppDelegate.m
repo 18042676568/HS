@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import "HSMainPageViewController.h"
 #import <Parse/Parse.h>
-//#import "HSLogonViewController.h"
+#import "HSLogonViewController.h"
 #import "HSWelcomePageViewController.h"
 
 
@@ -28,90 +28,6 @@
     
    [Parse setApplicationId:@"jlaKscSOU7TLkiAChVmIy1e5wMCLDwO52oC15rVU"
                  clientKey:@"cOmaeoJmm5wtmTJxKj2qJmKYIzYcw0ekrY6jmZlQ"];
-//  
-//    
-//////    建立用户，异步上传数据
-////    
-//    
-//    
-//    
-//    PFObject *anotherPlayer = [PFObject objectWithClassName:@"Player"];
-//    [anotherPlayer setObject:@"Jack"forKey:@"Name"];
-//    [anotherPlayer setObject:[NSNumber numberWithInt:840] forKey:@"Score"];
-//    [anotherPlayer saveInBackgroundWithBlock:^(BOOL succeeded,NSError *error){
-//        if(succeeded){
-//            NSLog(@"Object Uploaded");
-//        } else{
-//            
-//            NSString *errorString = [[error userInfo]objectForKey:@"error"];
-//            
-//            NSLog(@"Error:%@",errorString);
-//        } }];
-//    
-//    
-//    
-//    
-//    PFQuery *query = [PFQuery queryWithClassName:@"Player"]; //1
-//    [query whereKey:@"Name"equalTo:@"John"]; //2
-//    [query whereKey:@"Score"greaterThan:[NSNumber numberWithInt:1000]]; //3
-//    [query findObjectsInBackgroundWithBlock:^(NSArray * objects, NSError *error)
-//    {
-//        //4
-//        
-//    if(!error){
-//        
-//        NSLog(@"Successfully retrieved: %@",objects);
-//    }else
-//    {
-//        NSString *errorString = [[error userInfo]objectForKey:@"error"];
-//        NSLog(@"Error:%@",errorString);
-//    }
-//    }];
-//    
-//    
-//    
-//    
-//    
-////    按照注释编号来依次来解释下
-////    1. 创建了一个查询对象,名字是表的名称。
-////    2. 限定Name的值为John
-////    3. 限制Score的值为大于1000
-////    4. 发送查询,并在block块语句中打印查询结果。
-////    
-////
-//    
-//    
-//    
-//    
-////    登陆，判断！！@@@
-//    
-//    
-//    [PFUser logInWithUsernameInBackground:@"123" password:@"123456"
-//                                    block:^(PFUser *user, NSError *error) {
-//                                        if (user) {
-//                                            // Do stuff after successful login.
-//                                            
-//                                            NSLog(@"sucessful");
-//                                            
-//                                            
-//                                            
-//                                            
-//                                        } else {
-//                                            // The login failed. Check error to see why.
-//                                            
-//                                            NSLog(@"failed");
-//
-//                                            
-//                                            
-//                                            
-//                                        }
-//                                    }];
-//    
-    
-//    重置密码
-    
-//    [PFUser requestPasswordResetForEmailInBackground:@"email@example.com"];
-    
     
     //1.取得本app的版本号
     NSDictionary* infoDict = [NSBundle mainBundle].infoDictionary;
@@ -133,9 +49,9 @@
             //从主页启动
             UIWindow *window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
             self.window = window;
-            //                HSMainPageViewController *mainPage = [[HSMainPageViewController alloc]init];
-            //            window.rootViewController = mainPage;
-            //HSLogonViewController *logon = [[HSLogonViewController alloc]init];
+//                            HSMainPageViewController *mainPage = [[HSMainPageViewController alloc]init];
+//                        window.rootViewController = mainPage;
+//            HSLogonViewController *logon = [[HSLogonViewController alloc]init];
             UIStoryboard* storyboard0 = [UIStoryboard storyboardWithName:@"HSLogon" bundle:nil];
             UINavigationController *logon = [storyboard0 instantiateViewControllerWithIdentifier:@"logon"];
             window.rootViewController = logon;
@@ -166,51 +82,8 @@
     
     
     
-    
-//    //    用户认证
-//    //1
-//    PFUser *user = [PFUser user];
-//    //2
-//    user.username = @"hegf";
-//    user.password = @"123456";
-//    
-//    //3
-//    [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-//        if (!error) {
-//            //The registration was successful, go to the wall
-//            // [self performSegueWithIdentifier:@"SignupSuccesful" sender:self];
-//            NSLog(@"signUp sucess");
-//            
-//        } else {
-//            //Something bad has occurred
-//            NSString *errorString = [[error userInfo] objectForKey:@"error"];
-//            
-//            
-//            UIAlertView *errorAlertView = [[UIAlertView alloc] initWithTitle:@"Error" message:errorString delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
-//            [errorAlertView show];
-//        }
-//    }];
-//    
-//    
-//    
-//    [PFUser logInWithUsernameInBackground:@"hegf" password:@"123456" block:^(PFUser *user, NSError *error) {
-//        if (user) {
-//            //Open the wall
-//            NSLog(@"login sucess");
-//            //[self performSegueWithIdentifier:@"LoginSuccesful" sender:self];
-//        } else {
-//            //Something bad has ocurred
-//            NSString *errorString = [[error userInfo] objectForKey:@"error"];
-//            UIAlertView *errorAlertView = [[UIAlertView alloc] initWithTitle:@"Error" message:errorString delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
-//            [errorAlertView show];
-//        }
-//    }];
-//    
-//    //[PFUser enableRevocableSessionInBackground];
-//    
-//
-//    
-    
+    NSString* docPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
+    NSLog(@"%@",docPath);
     return YES;
 }
 

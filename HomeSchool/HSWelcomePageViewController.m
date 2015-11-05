@@ -87,8 +87,8 @@
     
     UIStoryboard* storyboard0 = [UIStoryboard storyboardWithName:@"HSLogon" bundle:nil];
     UINavigationController *logon = [storyboard0 instantiateViewControllerWithIdentifier:@"logon"];
-
     
+    [UIApplication sharedApplication].keyWindow.frame = [UIScreen mainScreen].bounds;
 
     [UIApplication sharedApplication].keyWindow.rootViewController = logon;
     

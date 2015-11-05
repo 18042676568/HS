@@ -58,8 +58,9 @@
         UIColor *color = [UIColor colorWithRed:red green:green blue:blue alpha:1.0];
         [self setBackgroundColor:color];
 
-        NSString *text = [NSString stringWithFormat:@"%@",self.changeString];
-        CGSize cSize = [@"S" sizeWithFont:[UIFont systemFontOfSize:20]];
+    NSString *text = [NSString stringWithFormat:@"%@",self.changeString];
+    NSDictionary  *attr = @{NSFontAttributeName:[UIFont systemFontOfSize:20]};
+    CGSize cSize = [@"S" sizeWithAttributes:attr];
         int width = rect.size.width / text.length - cSize.width;
         int height = rect.size.height - cSize.height;
         CGPoint point;
@@ -72,7 +73,7 @@
             point = CGPointMake(pX, pY);
             unichar c = [text characterAtIndex:i];
             NSString *textC = [NSString stringWithFormat:@"%C", c];
-            [textC drawAtPoint:point withFont:[UIFont systemFontOfSize:20]];
+            [textC drawAtPoint:point withAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:20]}];
         }
     
         CGContextRef context = UIGraphicsGetCurrentContext();

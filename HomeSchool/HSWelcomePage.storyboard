@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="fPG-JU-qVM">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Welcome Page View Controller-->
@@ -16,17 +17,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3LS-vh-aXQ">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3LS-vh-aXQ">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <connections>
                                     <outlet property="delegate" destination="fPG-JU-qVM" id="37I-ud-Opd"/>
                                 </connections>
                             </scrollView>
-                            <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Fgl-2j-N2e">
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Fgl-2j-N2e">
                                 <rect key="frame" x="168" y="600" width="39" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="fXE-u1-U0h"/>
+                                    <constraint firstAttribute="width" constant="39" id="k1h-qr-AKZ"/>
+                                </constraints>
                             </pageControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="3LS-vh-aXQ" secondAttribute="trailing" constant="-16" id="7nB-E7-Js9"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="Fgl-2j-N2e" secondAttribute="bottom" constant="30" id="O8J-2l-pju"/>
+                            <constraint firstItem="3LS-vh-aXQ" firstAttribute="centerX" secondItem="Fgl-2j-N2e" secondAttribute="centerX" id="TLE-uc-eZ8"/>
+                            <constraint firstItem="62s-eh-pB5" firstAttribute="top" secondItem="3LS-vh-aXQ" secondAttribute="bottom" id="Wgf-e9-GTD"/>
+                            <constraint firstItem="3LS-vh-aXQ" firstAttribute="leading" secondItem="qf6-qg-bio" secondAttribute="leadingMargin" constant="-16" id="rYq-eN-IRO"/>
+                            <constraint firstItem="3LS-vh-aXQ" firstAttribute="top" secondItem="LWC-DR-Eak" secondAttribute="bottom" id="tEj-mC-JKI"/>
+                        </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>

@@ -9,12 +9,27 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>MJRefresh.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>RDVTabBarController.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>REMenu.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SDWebImage.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -27,12 +42,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B660FD8065DDD411A339F11917B550FC</key>
+		<key>19B3121DC91DD9FD9768E271149DBF94</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FB2AACEDB3EC3C224E2069BA84D5519B</key>
+		<key>1CAF343ADFD0D4F50E90FB47DD693124</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>411B7FA31818A8F12E56EE6136471081</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5352D432641F0656C90741034E32F31E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A18F348AAC3F730DE9C6A8A71739572A</key>
 		<dict>
 			<key>primary</key>
 			<true/>

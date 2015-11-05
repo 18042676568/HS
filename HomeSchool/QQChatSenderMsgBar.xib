@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="QQChatMsgBar">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="chat_bottom_bg" translatesAutoresizingMaskIntoConstraints="NO" id="zIF-k1-Tqh">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                </imageView>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A7T-Zl-JCu">
+                    <rect key="frame" x="23" y="7" width="268" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <action selector="editdidEnd:" destination="iN0-l3-epB" eventType="editingDidEnd" id="LC3-Ru-c5g"/>
+                        <action selector="endExit:" destination="iN0-l3-epB" eventType="editingDidEndOnExit" id="oQc-WU-NV3"/>
+                        <action selector="textBegin:" destination="iN0-l3-epB" eventType="editingDidBegin" id="ggU-VJ-yyw"/>
+                        <action selector="textChanged:" destination="iN0-l3-epB" eventType="editingChanged" id="fic-Wc-ZwW"/>
+                    </connections>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eHf-9v-LFf">
+                    <rect key="frame" x="323" y="7" width="40" height="34"/>
+                    <state key="normal" title="发送">
+                        <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="highlighted">
+                        <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="sendMsg:" destination="iN0-l3-epB" eventType="touchUpInside" id="Sj2-tc-QHQ"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="messagetext" destination="A7T-Zl-JCu" id="HhM-jd-xCc"/>
+                <outlet property="sendButon" destination="eHf-9v-LFf" id="WMy-B5-ILN"/>
+            </connections>
+        </view>
+    </objects>
+    <resources>
+        <image name="chat_bottom_bg" width="10" height="42"/>
+    </resources>
+</document>

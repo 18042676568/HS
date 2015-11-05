@@ -12,13 +12,13 @@
 #import <Parse/Parse.h>
 #import "HSLoginViewController.h"
 #import <MBProgressHUD.h>
+#import "MBProgressHUD+MoreExtentions.h"
 
 @interface HSResignViewController ()
 //@property (weak, nonatomic) IBOutlet UIButton *risign;
 @property (weak, nonatomic) IBOutlet UITextField *phone;
 @property (weak, nonatomic) IBOutlet UITextField *identifyCode;
 @property (weak, nonatomic) IBOutlet UITextField *pwd;
-@property (weak, nonatomic) IBOutlet UIView *identify;
 @property (nonatomic,strong)PooCodeView *codeView;
 @end
 
@@ -31,17 +31,15 @@
             //2
             user.username = _phone.text;
             user.password = _pwd.text;
-            
             //3
             [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                 if (!error) {
-                    UIAlertView *errorAlertView = [[UIAlertView alloc] initWithTitle:@"注册结果" message:@"恭喜您注册成功" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
-                    [errorAlertView show];
-                    [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+                    [MBProgressHUD showTipToWindow:@"登录成功"];
                     [self performSegueWithIdentifier:@"tologon" sender:_phone.text];
                     
                     //_risign.enabled = YES;
                 } else {
+                    
                     //Something bad has occurred
                     NSString *errorString = [[error userInfo] objectForKey:@"error"];
                     UIAlertView *errorAlertView = [[UIAlertView alloc] initWithTitle:@"注册失败" message:errorString delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
@@ -53,8 +51,8 @@
 
         }
     }else{
-        UIAlertView *alview = [[UIAlertView alloc] initWithTitle:@"警告" message:@"验证码错误" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-        [alview show];
+        [MBProgressHUD showTipToWindow:@"验证吗错误"];
+        [_codeView touchesBegan:nil withEvent:nil];
         [self.view endEditing:NO];
     }
 }
@@ -90,14 +88,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    PooCodeView *poo = [[PooCodeView alloc]initWithFrame:CGRectMake(_identify.left, _identify.top, _identify.width, _identify.height)];
+    
+    
+}
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:YES];
+    //NSLog(@"%f %f %f",_phone.right,_identifyCode.right,_identifyCode.left);
+    PooCodeView *poo = [[PooCodeView alloc]initWithFrame:CGRectMake(_identifyCode.right+10, _identifyCode.top,_phone.right-_identifyCode.right-15,_pwd.height)];
+    //NSLog(@"%f",poo.right);
     _codeView = poo;
     [self.view addSubview:poo];
-    
-    int result1 = [@"This is John" compare:@"this is John" options:NSCaseInsensitiveSearch | NSNumericSearch];
-    NSLog(@"The result is %d",result1);
 }
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

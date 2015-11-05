@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="pze-bv-0wr">
+            <objects>
+                <navigationController storyboardIdentifier="teacherinfornv" id="ch6-Mn-5Rh" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Kus-h6-Ts5">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="L86-ux-Jjd" kind="relationship" relationship="rootViewController" id="QtV-Xt-P8a"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gqA-lA-FS8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="166.5" y="277.5"/>
+        </scene>
+        <!--老师信息-->
+        <scene sceneID="PKQ-7h-NBh">
+            <objects>
+                <tableViewController title="老师信息" id="L86-ux-Jjd" customClass="HSTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="aAM-qB-YvT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <connections>
+                            <outlet property="dataSource" destination="L86-ux-Jjd" id="ahf-Pz-EKI"/>
+                            <outlet property="delegate" destination="L86-ux-Jjd" id="TeH-kP-Hme"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="7Hz-Df-QLa"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <segue destination="cHh-t6-JkY" kind="show" identifier="toTeacherDetail" id="1By-Kr-cgW"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wTX-xi-B6V" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="666.5" y="277.5"/>
+        </scene>
+        <!--老师详细信息-->
+        <scene sceneID="xgX-LL-z8j">
+            <objects>
+                <viewController title="老师详细信息" id="cHh-t6-JkY" customClass="HSTeacherDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ccv-cL-M1W"/>
+                        <viewControllerLayoutGuide type="bottom" id="8Vf-0b-fsO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5DW-6l-uL4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6b7-On-Lu7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1206.5" y="277.5"/>
+        </scene>
+    </scenes>
+</document>
